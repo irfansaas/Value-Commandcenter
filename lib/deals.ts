@@ -136,6 +136,7 @@ export const sampleDeals: Deal[] = [
         status: 'completed',
         completedDate: '2025-01-26',
         notes: 'Citrix vs. Nerdio+AVD comparison exists. Include in Global VP financial deck.',
+        link: 'https://nerdio-tco-app.vercel.app/',
       },
       executiveBusinessCase: {
         status: 'completed',
@@ -149,6 +150,7 @@ export const sampleDeals: Deal[] = [
       implementationTimeline: {
         status: 'in-progress',
         notes: 'POV started 1/15/2025 but canceled 3/24. Restart timeline unclear - needs 30-day revised plan.',
+        link: 'https://nerdio-timeline-v1.vercel.app/',
       },
       valuePropositionDeck: {
         status: 'not-started',

@@ -192,9 +192,21 @@ export function DealDetailModal({ deal, onClose }: DealDetailModalProps) {
               {Object.entries(deal.veDeliverables).map(([key, deliverable]) => (
                 <div key={key} className="border border-gray-200 rounded-lg p-4 flex items-center justify-between">
                   <div>
-                    <p className="font-medium text-gray-900 capitalize">
-                      {key.replace(/([A-Z])/g, ' $1').trim()}
-                    </p>
+                    {deliverable.link ? (
+                      <a
+                        href={deliverable.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-medium text-blue-600 hover:text-blue-800 hover:underline capitalize inline-flex items-center gap-1"
+                      >
+                        {key.replace(/([A-Z])/g, " $1").trim()}
+                        <span className="text-sm">↗</span>
+                      </a>
+                    ) : (
+                      <p className="font-medium text-gray-900 capitalize">
+                        {key.replace(/([A-Z])/g, " $1").trim()}
+                      </p>
+                    )}
                     {deliverable.notes && <p className="text-sm text-gray-600 mt-1">{deliverable.notes}</p>}
                   </div>
                   <span
