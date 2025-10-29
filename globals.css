@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Nerdio Brand Colors */
+  --nerdio-primary: #239CBB;
+  --nerdio-secondary: #77CADC;
+  --nerdio-dark: #0F2A38;
+  --nerdio-light: #E8F4F8;
+  
+  /* Semantic Colors */
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+  
+  /* Backgrounds */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F9FAFB;
+  --bg-tertiary: #E8F4F8;
+  
+  /* Text Colors */
+  --text-primary: #0F2A38;
+  --text-secondary: #4B5563;
+  --text-muted: #9CA3AF;
+}
+
+body {
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  font-feature-settings: 'liga' 1, 'calt' 1;
+}
+
+/* Nerdio Custom Components */
+@layer components {
+  /* Primary Button - Nerdio Blue */
+  .btn-nerdio-primary {
+    @apply bg-nerdio-primary hover:bg-brand-600 text-white font-semibold py-2 px-4 rounded-nerdio transition-all duration-200 shadow-nerdio hover:shadow-nerdio-lg;
+  }
+  
+  /* Secondary Button - Light Blue */
+  .btn-nerdio-secondary {
+    @apply bg-nerdio-secondary hover:bg-brand-400 text-nerdio-dark font-semibold py-2 px-4 rounded-nerdio transition-all duration-200;
+  }
+  
+  /* Outline Button */
+  .btn-nerdio-outline {
+    @apply border-2 border-nerdio-primary text-nerdio-primary hover:bg-nerdio-light font-semibold py-2 px-4 rounded-nerdio transition-all duration-200;
+  }
+  
+  /* Card Component */
+  .card-nerdio {
+    @apply bg-white rounded-nerdio shadow-nerdio hover:shadow-nerdio-lg transition-all duration-200 border border-gray-100;
+  }
+  
+  /* Badge - Health Status */
+  .badge-healthy {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800;
+  }
+  
+  .badge-at-risk {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800;
+  }
+  
+  .badge-stalled {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800;
+  }
+  
+  /* Input with Nerdio styling */
+  .input-nerdio {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-nerdio focus:ring-2 focus:ring-nerdio-primary focus:border-nerdio-primary transition-all duration-200;
+  }
+  
+  /* Select with Nerdio styling */
+  .select-nerdio {
+    @apply px-4 py-2 border border-gray-300 rounded-nerdio bg-white focus:ring-2 focus:ring-nerdio-primary focus:border-nerdio-primary transition-all duration-200;
+  }
+  
+  /* Header gradient */
+  .header-gradient {
+    background: linear-gradient(135deg, var(--nerdio-dark) 0%, var(--nerdio-primary) 100%);
+  }
+  
+  /* Stat Card */
+  .stat-card {
+    @apply card-nerdio p-6 hover:scale-105 transition-transform duration-200;
+  }
+  
+  /* Deal Card */
+  .deal-card {
+    @apply card-nerdio p-6 cursor-pointer hover:-translate-y-1;
+  }
+}
+
+/* Health Score Colors */
+.health-score-high {
+  color: var(--color-success);
+}
+
+.health-score-medium {
+  color: var(--color-warning);
+}
+
+.health-score-low {
+  color: var(--color-error);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--nerdio-secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--nerdio-primary);
+}
+
+/* Animation utilities */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Focus visible for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--nerdio-primary);
+  outline-offset: 2px;
+}
+
+/* Nerdio-inspired gradients */
+.gradient-primary {
+  background: linear-gradient(135deg, #239CBB 0%, #77CADC 100%);
+}
+
+.gradient-dark {
+  background: linear-gradient(135deg, #0F2A38 0%, #239CBB 100%);
+}
+
+.gradient-light {
+  background: linear-gradient(135deg, #E8F4F8 0%, #FFFFFF 100%);
+}
+
+/* Hover effects */
+.hover-lift {
+  @apply transition-all duration-200 hover:-translate-y-1 hover:shadow-nerdio-lg;
+}

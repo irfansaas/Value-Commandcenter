@@ -1,0 +1,33 @@
+import type { Config } from 'tailwindcss'
+
+const config: Config = {
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        nerdio: {
+          primary: '#239CBB',
+          secondary: '#77CADC',
+          dark: '#0F2A38',
+          light: '#E8F4F8',
+        },
+        brand: {
+          500: '#239CBB',
+          600: '#1C7D96',
+          300: '#77CADC',
+          800: '#0F2A38',
+        },
+      },
+      boxShadow: {
+        'nerdio': '0 4px 6px -1px rgba(35, 156, 187, 0.1)',
+        'nerdio-lg': '0 10px 15px -3px rgba(35, 156, 187, 0.1)',
+      },
+    },
+  },
+  plugins: [],
+}
+export default config

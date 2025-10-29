@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: #F9FAFB;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-[#239CBB] hover:bg-[#1C7D96] text-white font-semibold py-2 px-4 rounded-lg transition-all;
+  }
+}
