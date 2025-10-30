@@ -15,7 +15,7 @@ export function DealCard({ deal, onViewDetails, viewMode }: DealCardProps) {
 
   if (viewMode === 'list') {
     return (
-      <div className="card flex items-center justify-between hover:shadow-md cursor-pointer" onClick={onViewDetails}>
+      <div className="card p-4 flex items-center justify-between hover:shadow-md cursor-pointer" onClick={onViewDetails}>
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-3">
             <span className="text-2xl">{healthEmoji}</span>
@@ -39,7 +39,7 @@ export function DealCard({ deal, onViewDetails, viewMode }: DealCardProps) {
 
   return (
     <div
-      className="card hover:shadow-lg cursor-pointer group transition-all transform hover:-translate-y-1"
+      className="card p-5 hover:shadow-lg cursor-pointer group transition-all transform hover:-translate-y-1"
       onClick={onViewDetails}
     >
       {/* Header */}
